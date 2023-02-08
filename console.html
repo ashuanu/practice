@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+	<body>
+
+		<form action="/action_page.php" class="login_form" method="post"  onsubmit="return validated()">
+                        
+			<table border="100"  cellpaddig:"20" align="center"  style=" border: 30px  solid rgb(0, 0, 0) ; text-align: justify; width: 3px;padding: 3px; font-size: larger ; margin-top: 40px; text-align: center; background-color: bisque;">
+          
+				<tr><th  colspan="400" style="color:rgb(17, 0, 255) ;text-align:center ">REGISTRATION FORM </th></tr>
+
+					<td><label><b>Employee Name:</b></label></td>
+					<td><input type="name" id="fullnameId" name="fullname" size="20" autocomplete required placeholder="Enter your name"></td>
+				</tr>
+
+                 <tr>
+		             <td><label><b>Employee Id:</b></label></td>
+					<td><input type="number" id="empId" name="mpId" min="0" max="20" step="3"></td>
+				</tr>
+                  <tr>
+		            <td><label><b>Gender:</b></label></td>
+					<td><input type="radio" id="maleId" name="gender"><label for="maleId">Male</label>
+					<input type="radio" id="fmaleId" name="gender"><label for="fmaleId">Female</label></td>
+				</tr>
+                <tr>  
+					<td><label><b>Phone Number:</b></label></td>
+					<td><input type="int" id="phId" phone number="phId" placeholder="0477-2234431" pattern="[0-9]{4}-[0-9]{7}"></td>
+			    
+                </tr> 
+
+				<tr>
+					<td><label><b>Address:</b></label></td>
+					<td><textarea rows="5" cols="23" placeholder="Enter your address"></textarea></td>
+				</tr>
+              <tr>
+					<td><label><b>Language Known:</b></label></td>
+					<td><input type="checkbox" id="checkEng" name="checkEng" value="E"><label for="checkEng">English</label><br>
+					<input type="checkbox" id="checkHin" name="checkHin" value="H"><label for="checkHin">Hindi</label><br>
+                                        <input type="checkbox" id="checkMal" name="checkMal" value="M"><label for="checkMal">Malayalam</label><br>
+                                        <input type="checkbox" id="checkTam" name="checkTam" value="T"><label for="checkTam">Tamil</label><br>
+					</td>
+				</tr>  
+                
+              <tr>
+                    <td><label><b>Select the file:</b></label></td>
+                    <td><input type="file" id="fileId" name="fileId"></td>
+                </tr>
+
+               <tr>
+					<td><label><b>Email:</b></label></td>
+					<td><input type="email" id="emailId" name="emailId" placeholder="Enter your email"></td>
+				</tr>
+                
+                <tr>
+					<td><label><b>Password:</b></label></td>
+					<td><input type="password" id="password" name="password" placeholder="Enter your password"></td>
+				</tr>
+             <td></td>
+				  <td><input type="submit" name="submitButton" value="Register">
+                                     <input type="reset" name="resetButton" value="Reset"></td>
+				</tr>
+			</table>
+            </div>
+		</form>
+		<script>
+           let fullnameIdEl = document.getElementById("fullnameId");
+		   let empIdEl= document.getElementById("empId");
+		   let maleIdEl = document.getElementById("maleId");
+		   let fmaleIdEl= document.getElementById("fmaleId");
+		   let phIdEl = document.getElementById("phId");
+		   let checkHinEl = document.getElementById("checkHin");
+		   let checkMalEl = document.getElementById("checkMal") ;
+		   let checkTamEl = document.getElementById("checkTam");
+		   let fileIdEl =document.getElementById("fileId");
+		   let emailIdEl= document.getElementById("emailId");
+		   let passwordE1 = document.getAnimations("password");
+
+let 
+
+        </script>
+	</body>
+</html>

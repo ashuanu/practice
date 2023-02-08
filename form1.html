@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <form class="modal-content" id="myForm">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold">Sign up</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body mx-3">
+                        <div class="mb-5">
+                            <label for="formName">Your name<span class="error-message">*</span></label>
+                            <input type="text" id="formName" class="form-control"/>
+                            <p id="nameErrMsg" class="error-message"></p>
+                        </div>
+                        <div class="mb-5">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <label for="formEmail">Your email<span class="error-message">*</span></label>                           
+                            <input type="email" id="formEmail" class="form-control"/>
+                            <p id="emailErrMsg" class="error-message"></p>
+                        </div>
+                        <div class="mb-4">
+                            <i class="fas fa-lock prefix grey-text"></i>
+                            <label for="formPassword">Your password<span class="error-message">*</span></label>
+                            <input type="password" id="formPassword" class="form-control"/>
+                            <p id="passwordErrMsg" class="error-message"></p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="formGender" class="w-100">Gender<span class="error-message">*</span></label>
+                            <select id="formGender" class="form-control">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="label-names">Course<span class="error-message">*</span></h4>
+                            <input type="radio" name="course" id="ece-course" value="ECE" checked/>
+                            <label for="ece-course">ECE</label>
+                            <input type="radio" name="course" id="cse-course" value="CSE" class="ml-2"/>
+                            <label for="cse-course">CSE</label>
+                            <input type="radio" name="course" id="eee-course" value="EEE" class="ml-2"/>
+                            <label for="eee-course">EEE</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>             
+                </form>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="" class="btn btn-primary btn-rounded mb-4" data-toggle="modal" data-target="#modalRegisterForm">
+                Launch Modal Register Form
+            </a>
+        </div>
+        <script>
+            let formData = {
+                name : "",
+                email : "",
+                password : "",
+                gender : "Male",
+                course : "ECE"
+            }
+
+            let formNameEl = document.getElementById("formName");
+            formNameEl.addEventListener("change", function(event){
+                formData.name = event.target.value;
+            });
+
+            let formEmailEl = document.getElementById("formEmail");
+            formEmailEl.addEventListener("change", function(event){
+                formData.email = event.target.value;
+            });
+
+            let formPasswordEl = document.getElementById("formPassword");
+            formPasswordEl.addEventListener("change", function(event){
+                formData.password = event.target.value;
+            });
+
+            let formGenderEl = document.getElementById("formGender");
+            formGenderEl.addEventListener("change",function(event){
+                formData.gender = event.target.value;
+            });
+
+            let eceCourseEl = document.getElementById("ece-course");
+            eceCourseEl.addEventListener("change",function(event){
+                formData.course = event.target.value;
+            });
+
+            let cseCourseEl = document.getElementById("cse-course");
+            eceCourseEl.addEventListener("change",function(event){
+                formData.course = event.target.value;
+            });
+
+            let eeeCourseEl = document.getElementById("eee-course");
+            eeeCourseEl.addEventListener("change",function(event){
+                formData.course = event.target.value;
+            });
+            let myFormEl = document.getElementById("myForm");
+            let nameErrMsgEl = document.getElementById("nameErrMsg");
+            let emailErrMsgEl = document.getElementById("emailErrMsg");
+            let passwordErrMsgEl = document.getElementById("passwordErrMsg");
+
+            function validateFormData(formData){
+                if (formData.name === ""){
+                    nameErrMsgEl.textContent = "*Please give your name";
+                }
+                else{
+                    nameErrMsgEl.textContent = "";
+                }
+                if (formData.email === ""){
+                    emailErrMsgEl.textContent = "*Please give your email";
+                }
+                else{
+                    emailErrMsgEl.textContent = "";
+                }
+                if (formData.password === ""){
+                    passwordErrMsgEl.textContent = "*Please give your password";
+                }
+                else{
+                    passwordErrMsgEl.textContent = "";
+                }
+            }
+
+            myFormEl.addEventListener("submit",function(event){
+                event.preventDefault();
+                validateFormData(formData);
+            });
+        </script>
+    </body>
+    </html>
